@@ -1,0 +1,122 @@
+*,
+html,
+body {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  padding-top: 50px;
+  background: #f0f0f0;
+}
+
+.todo {
+  top: 200px;
+  width: 80%;
+  margin: 0 auto;
+  box-shadow: rgba(0, 0, 0, 0.15) 0 1.95px 1.95px 2.6px;
+}
+
+.icon-wrapper {
+  position: relative;
+  cursor: pointer;
+}
+
+.icon-wrap {
+  cursor: pointer;
+}
+
+.count {
+  position: absolute;
+  top: -8px;
+  right: -16px;
+  display: grid;
+  place-items: center;
+  border-radius: 50px;
+  width: 17px;
+  height: 17px;
+  color: #fff;
+  background: red;
+}
+
+.list-container {
+  list-style-type: none;
+  background: white;
+}
+
+.list-item .input-field {
+  border: none;
+  outline: none;
+  height: 100%;
+}
+
+.list-item:nth-child(odd) .input-field {
+  text-decoration: line-through;
+}
+
+.list-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid lightgray;
+}
+
+.title-wrap h4 {
+  text-transform: capitalize;
+}
+
+.list-item form {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
+}
+
+.list-item .label-wrap {
+  display: flex;
+  align-items: center;
+}
+
+.list-item button {
+  border: none;
+  outline: none;
+  background: transparent;
+}
+
+.list-item .drag {
+  padding-left: 40px;
+  opacity: 0.2;
+}
+
+.list-item .drag:hover {
+  opacity: 1;
+  cursor: move;
+}
+
+.list-item .checkbox {
+  margin-right: 0.7rem;
+}
+
+.list-item .checkbox:hover,
+.list-item #submit:hover {
+  cursor: pointer;
+}
+
+#clear-all {
+  width: 100%;
+  border: none;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+  background: #f0f0f0;
+  opacity: 0.5;
+}
+
+#clear-all:hover {
+  cursor: pointer;
+  opacity: 1;
+  text-decoration: underline;
+}

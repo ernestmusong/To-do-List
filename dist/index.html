@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To-do list</title>
+<script defer src="bundle.js"></script></head>
+<body>
+    <div class="todo">
+        <ul class="list-container">
+            <li class="list-item">
+                <div class="title-wrap">
+                    <h4>to do</h4>
+                </div>
+                <div class="icon-wrapper">
+                    <span class="icon-wrap">
+                        <i class="far fa-sync-alt"></i>
+                    </span>
+                    <span class="count">0</span> 
+                </div>
+            </li>
+            <li class="list-item">
+                <form action="">
+                    <label for="add-item">
+                        <input type="text" name="add-item" required id="add-item" placeholder="Add to your list....">
+                    </label>
+                </form>
+            </li>
+        </ul>
+        <ul id="list-wrap" class="list-container"></ul>
+    </div>
+</body>
+</html>
