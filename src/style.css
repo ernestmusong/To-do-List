@@ -16,10 +16,9 @@ body {
   width: 80%;
   margin: 0 auto;
   box-shadow: rgba(0, 0, 0, 0.15) 0 1.95px 1.95px 2.6px;
-
 }
 
-.icon-wrapper{
+.icon-wrapper {
   position: relative;
   cursor: pointer;
 }
@@ -28,9 +27,9 @@ body {
   cursor: pointer;
 }
 
-.count{
+.count {
   position: absolute;
-  top:-8px;
+  top: -8px;
   right: -16px;
   display: grid;
   place-items: center;
@@ -44,6 +43,12 @@ body {
 .list-container {
   list-style-type: none;
   background: white;
+}
+
+.list-item .input-field {
+  border: none;
+  outline: none;
+  height: 100%;
 }
 
 .list-item:nth-child(odd) .input-field {
@@ -62,19 +67,13 @@ body {
   text-transform: capitalize;
 }
 
-.list-item .input-field {
-  border: none;
-  outline: none;
-  height: 100%;
-}
-
 .list-item form {
-display: flex;
-justify-content: space-between;
-align-items: center;
-width: 100%;
-padding-top: 0;
-padding-bottom: 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  padding-top: 0;
+  padding-bottom: 0;
 }
 
 .list-item .label-wrap {
@@ -92,6 +91,7 @@ padding-bottom: 0;
   padding-left: 40px;
   opacity: 0.2;
 }
+
 .list-item .drag:hover {
   opacity: 1;
   cursor: move;
@@ -114,8 +114,9 @@ padding-bottom: 0;
   background: #f0f0f0;
   opacity: 0.5;
 }
+
 #clear-all:hover {
- cursor: pointer;
- opacity: 1;
- text-decoration: underline;
+  cursor: pointer;
+  opacity: 1;
+  text-decoration: underline;
 }
