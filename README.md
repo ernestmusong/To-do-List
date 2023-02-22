@@ -45,7 +45,7 @@ It's an application that allows users to add, edit and remove items from the lis
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](#)
+- [Live Demo Link](https://ernestmusong.github.io/To-do-List/)
 
 ## 🚀 Project Presentation <a name="live-demo"></a>
 
