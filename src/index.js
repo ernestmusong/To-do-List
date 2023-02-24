@@ -1,60 +1,42 @@
 /* eslint no-unused-vars: 0 */
 /* eslint import/extensions: 0 */
-import _ from 'lodash';
 import './style.css';
 import { library, dom } from '@fortawesome/fontawesome-svg-core';
 import { faRotate } from '@fortawesome/free-solid-svg-icons/faRotate';
 import { faArrowTurnDown } from '@fortawesome/free-solid-svg-icons/faArrowTurnDown';
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical';
+import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt';
+import UI from './ui.js';
 
-library.add(faRotate, faArrowTurnDown, faEllipsisVertical);
+library.add(faRotate, faArrowTurnDown, faEllipsisVertical, faTrashAlt);
 dom.watch();
 
-const todos = [
-  {
-    index: 1,
-    description: 'First item',
-    completed: false,
-  },
-  {
-    index: 2,
-    description: 'Second item',
-    completed: false,
-  },
-  {
-    index: 3,
-    description: 'Third item',
-    completed: false,
-  },
-];
+const form = document.querySelector('#form');
+const submitBtn = document.querySelector('#submit');
 
-const listWrap = document.querySelector('#list-wrap');
+submitBtn.addEventListener('click', (e) => {
+  UI.editTodo(e);
+  UI.displayTodos();
+});
 
-const displayList = (todos) => {
-  let result = '';
-  todos.map((item) => {
-    result += `
-    <li class="list-item">
-    <form action="">
-        <div class="label-wrap">
-            <label for="checkbox">
-                <input class="checkbox" type="checkbox" name="checkbox" id="checkbox">
-            </label>
-            <label for="add-item">
-                <input class="input-field" type="text" name="add-item" id="add-item" value="${item.description}">
-            </label>
-        </div>
-        <button class="drag"><i class="fa-solid fa-ellipsis-vertical"></i></button>
-    </form>
-</li>
-    `;
-    return result;
-  });
+window.addEventListener('click', (e) => {
+  UI.removeTodo(e);
+});
 
-  listWrap.innerHTML = result;
-  return result;
-};
+window.addEventListener('change', (e) => {
+  UI.editTodo(e);
+});
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+  UI.addTodo();
+  UI.displayTodos();
+});
+
+window.addEventListener('load', () => {
+  UI.displayTodos();
+});
 
 window.addEventListener('DOMContentLoaded', () => {
-  displayList(todos);
+  UI.displayTodos();
 });
