@@ -48,7 +48,20 @@ body {
 .list-item .input-field {
   border: none;
   outline: none;
-  height: 100%;
+}
+
+.list-item .input-field:focus {
+  border: none;
+  outline: none;
+}
+
+.list-item .input {
+  border: none;
+  outline: none;
+}
+
+.list-item .input:focus {
+  outline: none !important;
 }
 
 .list-item:nth-child(odd) .input-field {
@@ -88,17 +101,20 @@ body {
 }
 
 .list-item .drag {
-  padding-left: 40px;
   opacity: 0.2;
 }
 
 .list-item .drag:hover {
   opacity: 1;
-  cursor: move;
+  cursor: pointer;
 }
 
 .list-item .checkbox {
   margin-right: 0.7rem;
+}
+
+#submit {
+  transform: rotate(90deg);
 }
 
 .list-item .checkbox:hover,
