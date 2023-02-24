@@ -56,8 +56,8 @@ export default class UI {
     deleteBtns.forEach((btn) => {
       if (e.target === btn) {
         const filtered = todoArr.filter((item) => item.index.toString() !== e.target.id.toString());
-        todoArr = filtered; console.log(todoArr)
-        for(let i = 0; i < todoArr.length; i += 1) {
+        todoArr = filtered;
+        for (let i = 0; i < todoArr.length; i += 1) {
           todoArr[i].index = i + 1;
         }
 
