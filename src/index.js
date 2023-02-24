@@ -7,12 +7,18 @@ import { faArrowTurnDown } from '@fortawesome/free-solid-svg-icons/faArrowTurnDo
 import { faEllipsisVertical } from '@fortawesome/free-solid-svg-icons/faEllipsisVertical';
 import { faTrashAlt } from '@fortawesome/free-solid-svg-icons/faTrashAlt';
 import UI from './ui.js';
+import STATUS from './Status.js';
 
 library.add(faRotate, faArrowTurnDown, faEllipsisVertical, faTrashAlt);
 dom.watch();
 
 const form = document.querySelector('#form');
 const submitBtn = document.querySelector('#submit');
+const clearBtn = document.querySelector('#clear-all');
+
+window.addEventListener('DOMContentLoaded', () => {
+  UI.displayTodos();
+});
 
 submitBtn.addEventListener('click', (e) => {
   UI.editTodo(e);
@@ -25,6 +31,7 @@ window.addEventListener('click', (e) => {
 
 window.addEventListener('change', (e) => {
   UI.editTodo(e);
+  STATUS.checkStatus(e);
 });
 
 form.addEventListener('submit', (e) => {
@@ -37,6 +44,6 @@ window.addEventListener('load', () => {
   UI.displayTodos();
 });
 
-window.addEventListener('DOMContentLoaded', () => {
-  UI.displayTodos();
+clearBtn.addEventListener('click', () => {
+  STATUS.clearAll();
 });
