@@ -46,4 +46,10 @@ window.addEventListener('load', () => {
 
 clearBtn.addEventListener('click', () => {
   STATUS.clearAll();
+  clearBtn.style.opacity = '0.5';
+  clearBtn.style.textDecoration = 'none';
 });
+
+window.onbeforeunload = (e) => {
+  STATUS.resetCompleted();
+};
