@@ -128,11 +128,9 @@ body {
   padding-top: 1rem;
   padding-bottom: 1rem;
   background: #f0f0f0;
-  opacity: 0.5;
+  opacity: 0.2;
 }
 
 #clear-all:hover {
   cursor: pointer;
-  opacity: 1;
-  text-decoration: underline;
 }
