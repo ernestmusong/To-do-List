@@ -45,7 +45,7 @@ It's an application that allows users to add, edit and remove items from the lis
 
 ## 🚀 Live Demo <a name="live-demo"></a>
 
-- [Live Demo Link](https://heroic-cupcake-639ac3.netlify.app/)
+- [Live Demo Link](https://musong-to-do.netlify.app/)
 
 ## 🚀 Project Presentation <a name="live-demo"></a>
 
