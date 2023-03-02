@@ -9,7 +9,9 @@ const todo = {
 };
 
 export default class UI {
+   
   static addTodo() {
+    
     if (inputField.value.length !== 0) {
       todo.description = inputField.value;
       todoArr.push(todo);

@@ -50,6 +50,6 @@ clearBtn.addEventListener('click', () => {
   clearBtn.style.textDecoration = 'none';
 });
 
-window.onbeforeunload = (e) => {
+window.onbeforeunload = () => {
   STATUS.resetCompleted();
 };
