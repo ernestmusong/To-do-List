@@ -1,65 +1,57 @@
-let todoArray = [];
+/**
+ * @jest-environment jsdom
+ */
+
+const todoArray = [];
 const todo = {
   description: String,
   completed: false,
 };
+const inputField = document.createElement('input');
+inputField.value = 'one';
 
-//edit function
-static editTodo(e) {
-    const editTodos = [...document.querySelectorAll('.input')];
-    editTodos.forEach((todo) => {
-      if (e.target === todo) {
-        const item = todoArr.find((item) => item.index.toString() === e.target.id.toString());
-        if (e.target.value.length !== 0) {
-          item.description = e.target.value;
-        }
-
-        localStorage.setItem('todos', JSON.stringify(todoArr));
-      }
-    });
-  }
-
-// updating items completed
-static checkStatus(e) {
-    const clearBtn = document.querySelector('#clear-all');
-    const checkBtns = [...document.querySelectorAll('.checkbox')];
-    checkBtns.forEach((btn) => {
-      if (e.target === btn) {
-        const todoArr = JSON.parse(localStorage.getItem('todos'));
-        const checked = todoArr.find((item) => item.index.toString() === e.target.id.toString());
-        if (checked.completed === false) {
-          checked.completed = true;
-          localStorage.setItem('todos', JSON.stringify(todoArr));
-        } else if (checked.completed === true) {
-          checked.completed = false;
-          localStorage.setItem('todos', JSON.stringify(todoArr));
-        }
-        for (let i = 0; i < todoArr.length; i += 1) {
-          if (todoArr[i].completed === true) {
-            clearBtn.style.opacity = 1;
-            clearBtn.style.textDecoration = 'underline';
-          }
-        }
-      }
-    });
-  }
-
-// clear completed tasks
-  static clearAll() {
-    let todoArr = JSON.parse(localStorage.getItem('todos'));
-    const checkedTodos = todoArr.filter((item) => item.completed === false);
-    todoArr = checkedTodos;
-    for (let i = 0; i < todoArr.length; i += 1) {
-      todoArr[i].index = i + 1;
+const addTodo = () => {
+  if (inputField.value.length !== 0) {
+    todo.description = inputField.value;
+    todoArray.push(todo);
+    for (let i = 0; i < todoArray.length; i += 1) {
+      todoArray[i].index = i + 1;
     }
-    localStorage.setItem('todos', JSON.stringify(todoArr));
-    UI.displayTodos();
+    localStorage.setItem('todos', JSON.stringify(todoArray));
+  }
+};
+
+const editTodo = (id, newInput) => {
+  const item = todoArray.find((item) => item.index === id);
+  if (inputField.value.length !== 0) {
+    item.description = newInput;
   }
 
-  static resetCompleted() {
-    const todoArr = JSON.parse(localStorage.getItem('todos'));
-    todoArr.forEach((item) => item.completed === false);
-    localStorage.setItem('todos', JSON.stringify(todoArr));
-    return todoArr;
-  }
+  localStorage.setItem('todos', JSON.stringify(todoArray));
+};
 
+const updateTodoStatus = (id) => {
+  const checked = todoArray.find((item) => item.index === id);
+  if (checked.completed === false) {
+    checked.completed = true;
+    localStorage.setItem('todos', JSON.stringify(todoArray));
+  } else if (checked.completed === true) {
+    checked.completed = false;
+    localStorage.setItem('todos', JSON.stringify(todoArray));
+  }
+};
+
+describe('todo', () => {
+  test('add a todo to todo array', () => {
+    addTodo();
+    expect(todoArray.length).toBe(1);
+  });
+  test('edit todo description with value of two', () => {
+    editTodo(1, 'two');
+    expect(todoArray[0].description).toBe('two');
+  });
+  test('check if completed status is updated', () => {
+    updateTodoStatus(1);
+    expect(todoArray[0].completed).toBe(true);
+  });
+});
