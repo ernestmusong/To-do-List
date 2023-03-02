@@ -2,7 +2,7 @@
  * @jest-environment jsdom
  */
 
-const todoArray = [];
+let todoArray = [];
 const todo = {
   description: String,
   completed: false,
@@ -41,6 +41,13 @@ const updateTodoStatus = (id) => {
   }
 };
 
+const clearAll = () => {
+  const checkedTodos = todoArray.filter((item) => item.completed === false);
+  todoArray = checkedTodos;
+  localStorage.setItem('todos', JSON.stringify(todoArray));
+  return todoArray;
+};
+
 describe('todo', () => {
   test('add a todo to todo array', () => {
     addTodo();
@@ -53,5 +60,12 @@ describe('todo', () => {
   test('check if completed status is updated', () => {
     updateTodoStatus(1);
     expect(todoArray[0].completed).toBe(true);
+  });
+  test('test clear all completed', () => {
+    updateTodoStatus(1);
+    clearAll();
+    for (let i = 0; i < todoArray.length; i += 1) {
+      expect(todoArray[i].completed).toBe(false);
+    }
   });
 });
