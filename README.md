@@ -25,7 +25,7 @@
 # 📖 [To Do List] <a name="about-project"></a>
 
 **[To Do List]** is a project at <a href='https://www.microverse.org/'>Microverse</a> module two.
-It's an application that allows users to add, edit and remove items from the list
+It's an application that allows users to add, edit and remove items from the list. All data is saved to local storage
 ## 🛠 Built With <a name="built-with"></a>
 
 ### Tech Stack <a name="tech-stack"></a>
