@@ -156,12 +156,17 @@ body {
   background: #f0f0f0;
  }
 
-.clear-all,
-.save-changes {
+.clear-all-wrap {
+  display: flex;
+  justify-content: center;
+}
+.clear-all {
   border: none;
+  outline: none;
   padding-top: 1rem;
   padding-bottom: 1rem;
-  color: blue;
+  margin: 0 auto;
+  color: red;
 }
 
 .clear-all:hover,
