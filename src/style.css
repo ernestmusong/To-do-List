@@ -111,6 +111,10 @@ body {
   display: none;
 }
 
+.remove {
+  margin-left: 0.5rem;
+}
+
 .list-item .checkbox {
   margin-right: 0.7rem;
 }

@@ -24,9 +24,14 @@ const displayTodos = () => {
                     
                 </div>
             </form>
-            <button onClick=showEditing(${todo.id})  class="drag edit" data-edit="${todo.id}">edit</button>
+            
+            <button onClick=showEditing(${todo.id})  class="drag edit" data-edit="${todo.id}">
+              <i class="fa-regular fa-pen-to-square"></i>
+            </button>
             <button onClick=editTodo(${todo.id})  class="drag update hide" data-update="${todo.id}">update</button>
-            <button onClick=deleteTodo(${todo.id}) id="${todo.id}" class="drag hide">remove</button>
+            <button onClick=deleteTodo(${todo.id}) id="${todo.id}" class="drag remove hide">
+              <i class="fa-solid fa-trash"></i>
+            </button>
 
         </li>
         `
