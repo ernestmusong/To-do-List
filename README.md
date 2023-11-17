@@ -24,7 +24,7 @@
 
 # 📖 [To Do List] <a name="about-project"></a>
 
-**[To Do List]** is a project at <a href='https://www.microverse.org/'>Microverse</a> module two.
+**[To Do List]**
 It's an application that allows users to add, edit and remove items from the list
 ## 🛠 Built With <a name="built-with"></a>
 
@@ -32,7 +32,7 @@ It's an application that allows users to add, edit and remove items from the lis
 <details>
   <summary>Client</summary>
   <ul>
-    <li><a href="#">HTML/CSS/JAVASCRIPT/WEBPACK</a></li>
+    <li><a href="#">HTML/CSS/JAVASCRIPT</a></li>
   </ul>
 </details>
 
